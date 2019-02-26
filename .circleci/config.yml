@@ -1,13 +1,13 @@
 version: 2.1
 
 jobs:
-  docker:
-    - image: node:10
   say-hello:
-    steps:
-      - run: echo 'Hello Min'
+      docker:
+        - image: node:10
+      steps:
+        - run: echo 'Hello Min'
 
 workflows:
   push:
-    steps:
+    jobs:
       - say-hello
