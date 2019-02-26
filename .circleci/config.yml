@@ -1,0 +1,6 @@
+version: 2.1
+
+workflows:
+  push:
+    steps:
+      - run: echo 'Hello Min'
