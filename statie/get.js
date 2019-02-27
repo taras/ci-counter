@@ -10,17 +10,17 @@ const fixturify = require("fixturify");
 const base = os.cwd();
 
 // path where the directory containing value will be located
-const { STATIE_VALUE_PATH } = env.process;
+const { STATIE_SOURCE } = env.process;
 
 assert(
-  lstatSync(STATIE_VALUE_PATH).isDirectory(),
+  lstatSync(STATIE_SOURCE).isDirectory(),
   `
-  Environment variable STATIE_VALUE_PATH should reference a directory, 
-  ${STATIE_VALUE_PATH} is not a directory.
+  Environment variable STATIE_SOURCE should reference a directory, 
+  ${STATIE_SOURCE} is not a directory.
 `
 );
 
-const value = fixturify(STATIE_VALUE_PATH);
+const value = fixturify(STATIE_SOURCE);
 
 // path in the microstate that you will be reading
 const {
@@ -29,4 +29,6 @@ const {
 
 const Type = require(join(base, "statierc.js"));
 
-const state = create(Type, value);
+console.log(`${path} from ${STATIE_SOURCE}`, value);
+
+// const state = create(Type, value);

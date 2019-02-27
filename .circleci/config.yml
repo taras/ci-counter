@@ -4,6 +4,16 @@ orbs:
   statie:
     orbs:
       node: circleci/node@0.0.8
+    commands:
+      get:
+        parameters:
+          source:
+              type: string
+          path:
+              type: string
+        steps:
+          - run: STATIE_SOURCE=<<parameters.source>> get <<parameters.path>>
+      
     jobs:
       setup:
         executor: node/default
@@ -16,6 +26,17 @@ orbs:
               steps:
                 - run: cd statie && sudo npm install -g
                 - run: which get
+      get:
+        executor: node/default
+        parameters:
+          source:
+              type: string
+          path:
+              type: string
+        steps:
+          - get:
+              source: <<parameters.source>>
+              path: <<parameters.path>>
 
 jobs:
   setup-environment:
@@ -33,3 +54,6 @@ workflows:
     jobs:
       - setup-environment
       - statie/setup
+      - statie/get:
+            source: ~/my-state
+            path: counter.state
