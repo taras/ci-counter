@@ -10,7 +10,6 @@ orbs:
         steps:
           - node/install-package-manager:
               npm: true
-          - checkout
           - node/with-cache:
               cache-key: statie/package.json
               steps:
