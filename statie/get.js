@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-require("@babel/register");
+require("@babel/register")({ cwd: __dirname });
 
 const mri = require("mri");
 const { lstatSync } = require("fs");
