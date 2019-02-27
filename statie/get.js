@@ -1,4 +1,6 @@
-require("babel-register");
+#!/usr/bin/env node
+
+require("@babel/register");
 
 const mri = require("mri");
 const os = require("os");
