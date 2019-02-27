@@ -31,7 +31,7 @@ const {
   _: [path]
 } = mri(process.argv.slice(2));
 
-const Type = require(join(base, "statierc.js"));
+const { default: Type } = require(join(base, "statierc.js"));
 
 let parts = path.split('.');
 

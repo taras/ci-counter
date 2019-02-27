@@ -1,5 +1,3 @@
-class MyDir {
+export default class MyDir {
   counter = Number;
 }
-
-exports = MyDir;
