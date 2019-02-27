@@ -55,6 +55,6 @@ workflows:
     jobs:
       - setup-environment
       - statie/get:
-            cache-key: my-state
-            source: ~/my-state
-            path: counter.state
+          cache-key: my-state
+          source: ~/my-state
+          path: counter.state
