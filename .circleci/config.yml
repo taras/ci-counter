@@ -6,7 +6,7 @@ jobs:
         - image: node:10
       steps:
         - run: ./call counter increment
-        - run: [ `./read counter.state` = "1" ]
+        - run: "[ `./read counter.state` = \"1\" ]"
 
 workflows:
   push:
