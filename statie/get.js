@@ -8,6 +8,8 @@ const mri = require("mri");
 const { lstatSync } = require("fs");
 const assert = require("assert");
 const { readSync } = require("fixturify");
+const { lensPath, view } = require("ramda"); 
+
 
 const base = process.cwd();
 
@@ -31,6 +33,8 @@ const {
 
 const Type = require(join(base, "statierc.js"));
 
-console.log(`${path} from ${STATIE_SOURCE}`, value, Type);
+let lens = lensPath(path.split('.'));
 
-// const state = create(Type, value);
+let result = view(lens, create(Type, value));
+
+console.log(result);
