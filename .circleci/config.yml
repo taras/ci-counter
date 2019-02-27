@@ -9,13 +9,12 @@ orbs:
         executor: node/default
         steps:
           - node/install-package-manager:
-              yarn: true
+              npm: true
           - checkout
           - node/with-cache:
               cache-key: statie/package.json
               steps:
-                - run: export PATH="$PATH:$(yarn global bin)"
-                - run: cd statie && yarn global add file:$PWD
+                - run: cd statie && npm install -g
                 - run: which get
 
 # jobs:
