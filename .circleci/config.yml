@@ -15,7 +15,8 @@ orbs:
               cache-key: statie/package.json
               steps:
                 - run: cd statie && yarn global add file:$PWD
-                - run: get
+                - run: echo $PATH
+                # - run: get
                 # - run: which invoke
 
 # jobs:
