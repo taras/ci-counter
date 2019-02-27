@@ -16,8 +16,8 @@ orbs:
               steps:
                 - run: cd statie && yarn global add file:$PWD
                 - run: echo $PATH
-                - run: yarn get
-                # - run: which invoke
+                # - run: yarn get
+                - run: which invoke
 
 # jobs:
 #   increment-by-one:
