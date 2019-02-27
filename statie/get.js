@@ -6,7 +6,7 @@ const mri = require("mri");
 const { lstatSync } = require("fs");
 const { join } = require("path");
 const assert = require("assert");
-const fixturify = require("fixturify");
+const { readSync } = require("fixturify");
 
 const base = process.cwd();
 
@@ -21,7 +21,7 @@ assert(
 `
 );
 
-const value = fixturify(STATIE_SOURCE);
+const value = readSync(STATIE_SOURCE);
 
 // path in the microstate that you will be reading
 const {
@@ -30,6 +30,6 @@ const {
 
 const Type = require(join(base, "statierc.js"));
 
-console.log(`${path} from ${STATIE_SOURCE}`, value);
+console.log(`${path} from ${STATIE_SOURCE}`, value, Type);
 
 // const state = create(Type, value);
