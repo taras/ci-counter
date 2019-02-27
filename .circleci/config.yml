@@ -21,6 +21,8 @@ orbs:
               type: string
           path:
               type: string
+          cache-key:
+              type: string
         steps:
           - checkout
           - node/install-package-manager:
@@ -30,6 +32,10 @@ orbs:
               steps:
                 - run: cd statie && sudo npm install -g
                 - run: which get
+          - restore_cache:
+              key: <<parameters.cache-key>>
+              paths:
+                - <<parameters.source>>
           - get:
               source: <<parameters.source>>
               path: <<parameters.path>>
@@ -49,5 +55,6 @@ workflows:
     jobs:
       - setup-environment
       - statie/get:
+            cache-key: my-state
             source: ~/my-state
             path: counter.state
