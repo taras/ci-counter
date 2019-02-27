@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "bin": {
+    "get": "./get.js",
+    "invoke": "./invoke.js"
+  },
   "dependencies": {
     "microstates": "0.13.0"
   }
