@@ -13,7 +13,7 @@ orbs:
               type: string
         steps:
           - run: STATIE_SOURCE=<<parameters.source>> get <<parameters.path>>
-
+    jobs:
       get:
         executor: node/default
         parameters:
