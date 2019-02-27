@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
-require("@babel/register")({ extends: "./.babelrc" });
+const { join } = require("path");
+
+require("@babel/register")({ extends: join(__dirname, ".babelrc") });
 
 const mri = require("mri");
 const { lstatSync } = require("fs");
-const { join } = require("path");
 const assert = require("assert");
 const { readSync } = require("fixturify");
 
