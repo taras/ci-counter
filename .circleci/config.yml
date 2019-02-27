@@ -1,13 +1,14 @@
 version: 2.1
 
 jobs:
-  say-hello:
+  increment-by-one:
       docker:
         - image: node:10
       steps:
-        - run: echo 'Hello Min'
+        - run: ./call counter increment
+        - run: [ `./read counter.state` = "1" ]
 
 workflows:
   push:
     jobs:
-      - say-hello
+      - increment-by-one
