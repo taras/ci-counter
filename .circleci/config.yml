@@ -48,7 +48,6 @@ workflows:
   push:
     jobs:
       - setup-environment
-      - statie/setup
       - statie/get:
             source: ~/my-state
             path: counter.state
