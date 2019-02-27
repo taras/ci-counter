@@ -11,6 +11,7 @@
     "microstates": "^0.13.0",
     "mri": "^1.1.4",
     "fixturify": "^0.3.4",
+    "@babel/core": "^7.3.4",
     "@babel/register": "^7.0.0",
     "@babel/preset-env":"^7.3.4",
     "@babel/plugin-proposal-class-properties": "^7.3.4"
