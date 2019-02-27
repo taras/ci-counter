@@ -3,7 +3,6 @@
 require("@babel/register");
 
 const mri = require("mri");
-const os = require("os");
 const { lstatSync } = require("fs");
 const { join } = require("path");
 const assert = require("assert");
@@ -12,7 +11,7 @@ const fixturify = require("fixturify");
 const base = process.cwd();
 
 // path where the directory containing value will be located
-const { STATIE_SOURCE } = env.process;
+const { STATIE_SOURCE } = process.env;
 
 assert(
   lstatSync(STATIE_SOURCE).isDirectory(),
