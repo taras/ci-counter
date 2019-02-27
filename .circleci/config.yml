@@ -14,7 +14,7 @@ orbs:
           - node/with-cache:
               cache-key: statie/package.json
               steps:
-                - run: cd statie && yarn global add
+                - run: cd statie && yarn global add file:$PWD
                 - run: which get
                 - run: which invoke
 
