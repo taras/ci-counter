@@ -12,10 +12,9 @@ orbs:
               yarn: true
           - checkout
           - node/with-cache:
-              cache-key: yarn.lock
+              cache-key: statie/package.json
               steps:
-                - run: cd statie && yarn global add .
-
+                - run: cd statie && yarn global add
 
 # jobs:
 #   increment-by-one:
