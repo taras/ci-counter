@@ -27,4 +27,5 @@ orbs:
 workflows:
   push:
     jobs:
+      - checkout
       - statie/setup
