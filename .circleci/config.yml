@@ -20,7 +20,7 @@ orbs:
 jobs:
   setup-environment:
       docker:
-        - image: circleci/node@11
+        - image: circleci/node:11
       steps:
         - checkout
         - restore_cache:
