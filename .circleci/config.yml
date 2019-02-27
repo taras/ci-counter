@@ -15,7 +15,7 @@ orbs:
               cache-key: statie/package.json
               steps:
                 - run: cd statie && yarn global add file:$PWD
-                - run: yarn global bin
+                - run: ls $(yarn global bin)
 
 # jobs:
 #   increment-by-one:
