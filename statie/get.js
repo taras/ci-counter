@@ -33,8 +33,12 @@ const {
 
 const Type = require(join(base, "statierc.js"));
 
-let lens = lensPath(path.split('.'));
+let parts = path.split('.');
+
+let lens = lensPath(parts);
 
 let result = view(lens, create(Type, value));
+
+console.log(parts)
 
 console.log(result);
