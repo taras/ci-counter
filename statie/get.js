@@ -39,6 +39,4 @@ let lens = lensPath(parts);
 
 let result = view(lens, create(Type, value));
 
-console.log(parts, Type)
-
 console.log(result);
